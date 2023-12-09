@@ -1,1 +1,1 @@
-gcc -g externalsort.c -o extsrt
+gcc -g external_sort.c -o extsrt -I ../public -lpublic -L ../lib -Wl,-rpath ../lib

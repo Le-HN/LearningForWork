@@ -1,11 +1,5 @@
-#include <stdlib.h>
-#include <stdio.h>
-#include <stdint.h>
-#include <string.h>
-#include <stdbool.h>
+#include "public.h"
 
-#define SUCCESS 0
-#define FAIL -1
 #define SORT_NUM 100       // num of nums for sort
 #define MEM_BYTE_LIMIT 80  // suppose the memory limit is 80 bytes, which can save 10 int64_t nums
 

@@ -1,17 +1,4 @@
-#include "externalsort.h"
-
-static void SimpleBubbleSort(int64_t *arr2Save, int32_t arrLen)
-{
-    for (uint32_t i = 0; i < arrLen; i++) {
-        for (uint32_t j = 0; j < arrLen - i - 1; j++) {
-            if (arr2Save[j] > arr2Save[j + 1]) {
-                uint32_t temp = arr2Save[j];
-                arr2Save[j] = arr2Save[j + 1];
-                arr2Save[j + 1] = temp;
-            }
-        }
-    }
-}
+#include "external_sort.h"
 
 static void SortAndSave2File(int64_t *arr2Save, int32_t arrLen, FileListT *fileList)
 {
@@ -98,14 +85,6 @@ static void ExecuteExternalSort(int64_t *arrForSort)
     free(fileList.fileCursors);
 }
 
-static void GenerateRandomNum(int64_t *arrForSort)
-{
-    for (uint32_t i = 0; i < SORT_NUM; i++) {
-        arrForSort[i] = rand();
-        printf("%d: %ld\n", i, arrForSort[i]);
-    }
-}
-
 bool IsResultCorrect()
 {
 	FILE* f1, * f2;
@@ -161,7 +140,7 @@ int32_t main()
     int64_t arrayForSort[SORT_NUM] = {0};
     system("rm -rf ./final_result.txt");
     system("rm -rf ./expected.txt");
-    GenerateRandomNum(arrayForSort);
+    GenerateRandomNum(arrayForSort, SORT_NUM);
     ExecuteExternalSort(arrayForSort);
     int32_t ret = VerifyResult(arrayForSort);
     if (ret != SUCCESS) {
