@@ -145,6 +145,8 @@ int32_t main()
     int32_t ret = VerifyResult(arrayForSort);
     if (ret != SUCCESS) {
         printf("Result incorrect!\n");
+        system("rm -rf ./tempfile*");
+        return ret;
     }
     printf("Success!\n");
     system("rm -rf ./tempfile*");

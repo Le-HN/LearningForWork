@@ -47,6 +47,7 @@ int32_t main()
     int32_t ret = VerifyResult(arrayForSort, resArray);
     if (ret != SUCCESS) {
         printf("Result incorrect!\n");
+        return ret;
     }
     printf("Success!\n");
     return ret;

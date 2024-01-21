@@ -24,4 +24,8 @@ then
     cd ../HeapSort
     sh build.sh
     cp hpsrt ../bin/heap_sort
+
+    cd ../MultiThread
+    sh build.sh
+    cp multrd ../bin/multi_thread
 fi
