@@ -28,4 +28,9 @@ then
     cd ../MultiThread
     sh build.sh
     cp multrd ../bin/multi_thread
+
+    cd ../SocketCommunication
+    sh build.sh
+    cp sktsrv ../bin/socket_com_srv
+    cp sktclt ../bin/socket_com_clt
 fi
