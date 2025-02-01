@@ -2,35 +2,12 @@
 if [ $1 == "clean" ]
 then
     echo "cleaning..."
-    rm -rf bin
-    rm -rf lib
+    rm -rf build
+    rm -rf CMakeFiles
     exit
 fi
 
-if [ $1 == "compile" ]
-then
-    echo "compiling..."
-    mkdir -p bin
-    mkdir -p lib
-
-    cd public
-    sh build.sh
-    cp libpublic.so ../lib/libpublic.so
-
-    cd ../ExternalSort
-    sh build.sh
-    cp extsrt ../bin/external_sort
-
-    cd ../HeapSort
-    sh build.sh
-    cp hpsrt ../bin/heap_sort
-
-    cd ../MultiThread
-    sh build.sh
-    cp multrd ../bin/multi_thread
-
-    cd ../SocketCommunication
-    sh build.sh
-    cp sktsrv ../bin/socket_com_srv
-    cp sktclt ../bin/socket_com_clt
-fi
+mkdir -p build
+echo "compiling..."
+cmake .
+sudo make
