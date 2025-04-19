@@ -11,5 +11,6 @@ add_subdirectory(ExternalSort)
 add_subdirectory(HeapSort)
 add_subdirectory(MultiThread)
 add_subdirectory(SocketCommunication)
+add_subdirectory(SharedMemory)
 
 link_directories(${LIB_DIR})
